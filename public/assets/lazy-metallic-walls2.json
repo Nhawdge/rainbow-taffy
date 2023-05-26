@@ -1,0 +1,58 @@
+{ "frames": [
+   {
+    "filename": "lazy-metallic-walls (Sprite Sheet) #Wall1.png",
+    "frame": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   {
+    "filename": "lazy-metallic-walls (Sprite Sheet) #Wall2.png",
+    "frame": { "x": 0, "y": 16, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   {
+    "filename": "lazy-metallic-walls (Sprite Sheet) #Wall3.png",
+    "frame": { "x": 0, "y": 32, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   {
+    "filename": "lazy-metallic-walls (Sprite Sheet) #Floor.png",
+    "frame": { "x": 0, "y": 48, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.40-x64",
+  "image": "lazy-metallic-walls-sheet2.png",
+  "format": "RGBA8888",
+  "size": { "w": 16, "h": 64 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Wall1", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "Wall2", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "Wall3", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "Floor", "from": 13, "to": 13, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Sprite Sheet", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

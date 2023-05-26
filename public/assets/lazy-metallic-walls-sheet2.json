@@ -1,0 +1,113 @@
+{
+  "frames": [
+    {
+      "filename": "lazy-metallic-walls-sheet2 (Layer 1) #Wall.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 192,
+        "h": 80
+      },
+      "duration": 100
+    },
+    {
+      "filename": "lazy-metallic-walls-sheet2 (Layer 3) #Wall.png",
+      "frame": {
+        "x": 0,
+        "y": 80,
+        "w": 192,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 192,
+        "h": 80
+      },
+      "duration": 100
+    },
+    {
+      "filename": "lazy-metallic-walls-sheet2 (Layer 2) #Wall.png",
+      "frame": {
+        "x": 0,
+        "y": 160,
+        "w": 192,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 192,
+        "h": 80
+      },
+      "duration": 100
+    }
+  ],
+  "meta": {
+    "app": "https://www.aseprite.org/",
+    "version": "1.2.40-x64",
+    "image": "lazy-metallic-walls-sheet2-sheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 192,
+      "h": 240
+    },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "Wall",
+        "from": 0,
+        "to": 0,
+        "direction": "forward"
+      },
+      {
+        "name": "Wall",
+        "from": 1,
+        "to": 1,
+        "direction": "forward"
+      }
+    ],
+    "layers": [
+      {
+        "name": "Layer 1",
+        "opacity": 255,
+        "blendMode": "normal"
+      },
+      {
+        "name": "Layer 3",
+        "opacity": 255,
+        "blendMode": "normal"
+      },
+      {
+        "name": "Layer 2",
+        "opacity": 255,
+        "blendMode": "normal"
+      }
+    ],
+    "slices": []
+  }
+}
