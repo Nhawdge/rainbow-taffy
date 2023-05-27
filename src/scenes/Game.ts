@@ -1,5 +1,6 @@
 import k from '../kaboom';
 import assets from '../assets';
+import Helicopter from '../Entities/Helicopter.js';
 
 export default function Game() {
   const {
@@ -15,29 +16,10 @@ export default function Game() {
     "qwwwwwwwwwwwwwwwwwwwwwwww",
     "a                        ",
     "a                        ",
-    "a     d                  ",
-    "a     d                  ",
-    "a     d                  ",
-    "zxxxxxc                  ",
-    "qwwwwwe                  ",
-    "a     d                  ",
-    "a     d                  ",
-    "a     d                  ",
     "a                        ",
+    "a           x            ",
+    "a          xxx           ",
     "a                        ",
-    "a     d                  ",
-    "a     d                  ",
-    "a     d                  ",
-    "zxxxxxc                  ",
-    "qwwwwwe                  ",
-    "a     d                  ",
-    "a     d                  ",
-    "a     d                  ",
-    "a                        ",
-    "a                        ",
-    "a     d                  ",
-    "a     d                  ",
-    "a     d                  ",
     "zxxxxxxxxxxxxxxxxxxxxxxxxc"
   ]]
 
@@ -87,13 +69,14 @@ export default function Game() {
   addLevel(world[0], leveloptions);
 
   let obj = add([
-    pos(width() * 0.5, height() * 0.5),
+    pos(100,100),
     origin('center'),
     sprite(assets.MY_DUDE),
     area(),
-    //body(),
+    body({ jumpForce: 320, weight: 1 }),
     solid(),
     {
+      shootspeed: 1,
       id: "canShoot",
       value: true,
       canShoot() { return this.value },
@@ -111,11 +94,8 @@ export default function Game() {
   var walkspeed = 50;
   var animationSpeed = 5;
 
-  onKeyDown("w", function () {
-    obj.move(0, -walkspeed);
-    if (obj.curAnim() != "Walk") {
-      obj.play('Walk', { speed: animationSpeed, loop: true });
-    }
+  onKeyPress("space", function () {
+    obj.doubleJump();
   })
 
   onKeyDown("s", function () {
@@ -146,7 +126,7 @@ export default function Game() {
   onMouseDown(() => {
     if (obj.canShoot() == false) return;
     obj.stopShoot();
-    wait(1 / 5, () => {
+    wait(1 / obj.shootspeed, () => {
       obj.startShoot();
     });
     var mousePos = mouseWorldPos();
@@ -168,7 +148,7 @@ export default function Game() {
     ])
   })
 
-  let scoreboard = add([
+  scoreboard = add([
     fixed(),
     text(`Score: 0000`, {
       size: 12
@@ -187,7 +167,7 @@ export default function Game() {
   console.log(scoreboard);
 
   add([
-    loop(1, () => {
+    loop(10, () => {
       console.log("spawn")
       let target = add([
         health(5),
@@ -198,8 +178,10 @@ export default function Game() {
       ]);
       target.onDeath(() => {
         destroy(target);
+        obj.shootspeed += 1;
         scoreboard.addScore()
       })
+      Helicopter();
 
     })
   ])
@@ -212,3 +194,4 @@ export default function Game() {
   })
 };
 
+export var scoreboard

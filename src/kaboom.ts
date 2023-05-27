@@ -1,12 +1,12 @@
 import kaboom from 'kaboom';
 
 const k = kaboom({
-	width: 320,
-	height: 240,
+	width: 1024,
+	height: 768,
 	scale: 1,
-	stretch: true,
+	//stretch: true,
 	letterbox: true,
-	center: true,
+	//center: true,
 });
 
 export default k;
