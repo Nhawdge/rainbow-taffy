@@ -3,22 +3,49 @@ import assets from "../assets.js";
 export default function Player() {
 
     let obj = add([
-        pos(100, 100),
+        pos(100, 150),
         origin('center'),
         sprite("hero"),
         area(),
         body({ jumpForce: 320, weight: 1 }),
         solid(),
         {
-            shotsPerSecond: 1,
+            shotsPerSecond: 10,
             id: "canShoot",
             value: true,
             canShoot() { return this.value },
             stopShoot() { this.value = false },
             startShoot() { this.value = true }
         },
-        outline(1, "black")
+        outline(1, "black"),
+
     ]);
+    var gun = add([
+        pos(obj.pos),
+        sprite("pistol", { frame: 0, width: 8, height: 8 }),
+        origin("left"),
+    ]);
+
+    gun.onUpdate(() => {
+        var mousePos = mouseWorldPos();
+        var velocity = mousePos.sub(obj.pos).unit();
+        var angle = velocity.angle();
+        gun.flipY(false);
+        if (angle > 90 || angle < -90) {
+            gun.flipY(true);
+        }
+        var radius = 8;
+        gun.pos = vec2(obj.pos.x + radius * Math.cos(angle * Math.PI / 180), obj.pos.y + radius * Math.sin(angle * Math.PI / 180));
+        gun.angle = angle
+    });
+    console.log({ gun });
+
+
+    // var arm = add([
+    //     pos(obj.pos),
+    //     sprite("hero1arm"),
+    // ]);
+
 
     obj.onUpdate(() => {
         camPos(new vec2(obj.pos.x, 150));
@@ -90,7 +117,7 @@ export default function Player() {
             sprite("laser"),
             scale(0.25),
             rotate(angle),
-            pos(obj.pos.x, obj.pos.y),
+            pos(gun.pos),
             origin("center"),
             move(velocity, 500),
             cleanup(),

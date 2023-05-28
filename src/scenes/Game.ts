@@ -70,6 +70,7 @@ export default function Game() {
   layer(["bg", "world", "ui"], "obj");
   add([
     sprite("background", "bg"),
+    scale(4, 0),
     layer("bg")
   ])
   addLevel(world[0], leveloptions);

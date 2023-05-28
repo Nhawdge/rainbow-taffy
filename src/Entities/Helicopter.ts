@@ -22,12 +22,12 @@ export default function Helicopter() {
         health(15),
     ])
 
-    copter.onDeath(() => {
+    let deathAction = copter.onDeath(() => {
+        deathAction();
         copter.onUpdate(() => {
-            copter.move(0, 50);
+            copter.move(0, 150);
         })
-        copter.solid = false;
-        wait(3, () => {
+        wait(10, () => {
             destroy(copter);
         })
         scoreboard.addScore()
