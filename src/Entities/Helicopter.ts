@@ -23,7 +23,10 @@ export default function Helicopter() {
     ])
 
     copter.onDeath(() => {
-        copter.moveTo(copter.pos.x, copter.pos.y + 10000, 1000);
+        copter.onUpdate(() => {
+            copter.move(0, 50);
+        })
+        copter.solid = false;
         wait(3, () => {
             destroy(copter);
         })

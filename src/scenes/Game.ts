@@ -17,6 +17,8 @@ export default function Game() {
     "a                        ",
     "a                        ",
     "a                        ",
+    "a                        ",
+    "a                        ",
     "a           x            ",
     "a          xxx           ",
     "a                        ",
@@ -69,7 +71,7 @@ export default function Game() {
   addLevel(world[0], leveloptions);
 
   let obj = add([
-    pos(100,100),
+    pos(100, 100),
     origin('center'),
     sprite(assets.MY_DUDE),
     area(),
@@ -86,7 +88,7 @@ export default function Game() {
   ]);
 
   obj.onUpdate(() => {
-    camPos(obj.pos)
+    camPos(new vec2(obj.pos.x, 150));
   })
 
   obj.play('Idle', { speed: 0.2, loop: true });
