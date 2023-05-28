@@ -14,16 +14,16 @@ export default function Game() {
   } = k;
 
   const world = [[
-    "qwwwwwwwwwwwwwwwwwwwwwwwwe",
-    "a                        ",
-    "a                        ",
-    "a                        ",
-    "a                        ",
-    "a                        ",
-    "a           x            ",
-    "a          xxx           ",
-    "a                        ",
-    "zxxxxxxxxxxxxxxxxxxxxxxxxc"
+    "qwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwe",
+    "a                                                              ",
+    "a                                                              ",
+    "a                                                              ",
+    "a                                                              ",
+    "a                                                              ",
+    "a           x                                                  ",
+    "a          xxx                                                 ",
+    "a         xxxxx                                                 ",
+    "zxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc"
   ]]
 
   const leveloptions = {
@@ -70,8 +70,9 @@ export default function Game() {
   layer(["bg", "world", "ui"], "obj");
   add([
     sprite("background", "bg"),
-    scale(4, 0),
-    layer("bg")
+    layer("bg"),
+    "bg",
+    fixed(),
   ])
   addLevel(world[0], leveloptions);
 

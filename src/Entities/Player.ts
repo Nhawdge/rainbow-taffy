@@ -53,7 +53,7 @@ export default function Player() {
 
     obj.play('Idle', { speed: 1, loop: true });
 
-    var walkspeed = 50;
+    var walkspeed = 100;
     var animationSpeed = 5;
 
     onKeyPress("space", function () {
